@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row d-flex flex-row card-design">
+        <span class="text-center fs-4 py-5"><button routerLink="empform"><i class="bi bi-plus-square"></i> Add Employee</button></span>
+        <div class="card" style="width: 18rem;" *ngFor="let user of data">
+            <div class="card-body">
+                <h5 class="card-title text-center text-dark"> {{user.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <i class="bi bi-envelope-at custom-icon"></i>
+                    <a> {{user.email}}</a>
+                </h6>
+                <p>
+                    <i class="bi bi-person-bounding-box custom-icon"></i> ID No: {{user.id}}
+                </p>
+                <p class="d-flex justify-content-between">
+                    <button><i class="bi bi-pencil-square"></i></button>
+                    <button><i class="bi bi-trash3"></i></button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

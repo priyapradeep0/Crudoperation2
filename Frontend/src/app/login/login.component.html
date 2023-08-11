@@ -1,0 +1,40 @@
+<div class="container box">
+    <div class="row  justify-content-center">
+        <div class="col-lg-5 col-md-10 col-12  outer-box">
+            <h2 class="text-center text-primary">Log In</h2>
+            <br>
+            <form #userform = "ngForm" (ngSubmit)="loginuser()">
+                <br>
+                <div class="form-group">
+                    <input type="email" 
+                    class="form-control " 
+                    required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                    [(ngModel)]="user.email" 
+                    name="Email" #email="ngModel"
+                    placeholder="Enter email">
+                    <small [class.d-none]="email.valid || email.untouched"
+                    class="text-danger bg-warning-subtle p-2 fw-bold">Email is required and should be valid</small> 
+                </div>
+            
+                <br>
+  
+               <div class="form-group">
+                    <input type="text" 
+                    class="form-control" 
+                    [(ngModel)]="user.password" 
+                    required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                    name="Password" #pwd="ngModel"
+                    [class.is-invalid]="pwd.invalid && pwd.touched"
+                    placeholder="Enter password">
+                    <small [class.d-none]="pwd.valid || pwd.untouched"
+                    class="text-danger bg-warning-subtle p-2 fw-bold">Must include alphabets, numbers and atleast 8 characters </small>
+                </div>
+        
+                <br>
+  
+               <button type="submit" class="btn" [disabled]="userform.invalid">Submit</button>
+            </form>        
+        </div>
+    </div>
+</div>
+  

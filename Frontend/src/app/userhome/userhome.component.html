@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="row container m-5">
+    <div class="box m-5">
+        <table class="table table-hover table-dark outer-table border-tertiary">
+            <thead>
+            <tr>
+                <th scope="col" class="text-warning text-center bi bi-person-bounding-box p-3"> Name</th>
+                <th scope="col" class="text-warning text-center bi bi-person-rolodex p-3"> Designation</th>
+                <th  scope="col"class="text-warning text-center bi bi-geo-alt p-3"> Location</th>
+                <th  scope="col"class="text-warning text-center bi bi-wallet2 p-3"> Salary</th>
+            </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr *ngFor="let employee of employees" class="p-3">
+                    <td class="text-center ">{{employee.name}}</td>
+                    <td class="text-center">{{employee.designation}}</td>
+                    <td class="text-center">{{employee.location}}</td>
+                    <td class="text-center">{{employee.salary}}</td>
+                </tr>
+            </tbody>
+        </table>   
+    </div>
+</div>
+

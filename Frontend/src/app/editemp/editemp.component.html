@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="container box">
+    <div class="row  justify-content-center">
+        <div class="col-lg-5 col-md-10 col-12 text-light outer-box">
+            <h2 class="text-center">Employee Form</h2>
+            <br>
+            <form #employeeform="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input type="text" 
+                    class="form-control decor2" 
+                    id="fieldName" placeholder="Enter name"
+                    name="employeename" [(ngModel)]="employee.name"
+                    #name="ngModel" required
+                    [class.is-invalid]="name.invalid && name.touched">
+                    <small [class.d-none]="name.valid || name.untouched"
+                    class="text-danger">Field is required</small> 
+                </div><br>
+
+                <div class="form-group">
+                    <input type="text" 
+                    class="form-control decor1" 
+                    id="designation" placeholder="Enter designation"
+                    name="employeedesignation" [(ngModel)]="employee.designation"
+                    #designation="ngModel" required
+                    [class.is-invalid]="designation.invalid && designation.touched">
+                    <small [class.d-none]="designation.valid || designation.untouched"
+                    class="text-danger">Field is required</small> 
+                </div><br>
+
+                <div class="form-group">
+                    <input type="text" 
+                    class="form-control decor2" 
+                    id="location" placeholder="Enter location"
+                    name="employeelocation" [(ngModel)]="employee.location"
+                    #location="ngModel" required
+                    [class.is-invalid]="location.invalid && location.touched">
+                    <small [class.d-none]="location.valid || location.untouched"
+                    class="text-danger">Field is required</small> 
+                </div><br>
+
+                <div class="form-group">
+                    <input type="text" 
+                    class="form-control decor1" 
+                    id="Salary"  placeholder="Enter salary"
+                    name="employeesalary" [(ngModel)]="employee.salary"
+                    #salary="ngModel" required
+                    [class.is-invalid]="salary.invalid && salary.touched">
+                    <small [class.d-none]="salary.valid || salary.untouched"
+                    class="text-danger">Field is required</small> 
+                </div>
+
+                <br>
+                <button type="submit" class="btn" [disabled]="employeeform.invalid" >Submit</button>
+            </form>        
+        </div>
+    </div>
+</div>
